@@ -7,7 +7,7 @@ var currentTime = moment().format("h");
 //console.log(currentTime);
 
 
-//Change textarea background color based on time       https://stackoverflow.com/questions/62462599/how-can-i-change-elements-style-based-on-the-time-of-day
+//Change textarea background color based on time       
 var checkTime = function () {
 
     //Get Current time
@@ -44,10 +44,14 @@ setInterval(checkTime(), (1000 * 60) * 5);
 
 
 
-var tasks = document.querySelector('.textarea');
+const tasks = document.querySelector('.textarea');
 
 
 // saving into local storage  TODO
   $('#save-btn').click(function() {
-      localStorage.setItem("tasks", JSON.stringify(currentTime))
+
+    dailyTasks = tasks.value;
+      
+      localStorage.setItem("tasks", JSON.stringify(dailyTasks))
+      console.log(localStorage);
   });
