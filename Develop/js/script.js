@@ -44,10 +44,10 @@ setInterval(checkTime(), (1000 * 60) * 5);
 
 
 
-const tasks = document.querySelector('.textarea');
+// Local storage
+   var tasks = document.querySelector('.textarea');
+// var tasks = $(".textarea");
 
-
-// saving into local storage  TODO
   $('#save-btn').click(function() {
 
     dailyTasks = tasks.value;
@@ -55,3 +55,39 @@ const tasks = document.querySelector('.textarea');
       localStorage.setItem("tasks", JSON.stringify(dailyTasks))
       console.log(localStorage);
   });
+
+
+
+// //Grabbing task IDs for time slots
+// var tasks9AM = document.getElementById("09");
+// var tasks10AM = document.getElementById("10");
+// var tasks11AM = document.getElementById("11");
+// var tasks12PM = document.getElementById("12");
+// var tasks1PM = document.getElementById("13");
+// var tasks2PM = document.getElementById("14");
+// var tasks3PM = document.getElementById("15");
+// var tasks4PM = document.getElementById("16");
+// var tasks5PM = document.getElementById("17");
+
+
+
+// var localStorageSave = function() {
+//     var timeBlockElements = $(".textarea");
+
+//     //loop through taskarea classes
+//     for (var i = 0 ; i < timeBlockElements.length ; i++) {
+
+//         //Get element i's ID as a string
+//         var elementID = timeBlockElements[i].id;
+
+//         //get element by ID
+//         var manipID = document.getElementById(timeBlockElements[i].id)
+// }
+// };
+//   $('#save-btn').click(function() {
+
+//     dailyTasks = tasks.value;
+      
+//       localStorage.setItem("tasks", JSON.stringify(localStorageSave))
+//       console.log(localStorage);
+//   });
