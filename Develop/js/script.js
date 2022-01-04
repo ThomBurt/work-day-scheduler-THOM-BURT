@@ -56,19 +56,11 @@ setInterval(checkTime(), (1000 * 60) * 5);
       //console.log(localStorage);
   });
 
-
-function getTasks() {
-    var tasksFromLocal = JSON.parse(window.localStorage.getItem("tasksFromLocal")) || [];
-    tasksFromLocal.sort(function (a, b) {
-        return b.score - a.score;
-    });
-
-    for (var i = 0; i < tasksFromLocal.length; i++) {
-        let pText = document.createElement("P");
-        pText.innerHTML = tasksFromLocal[i]
-    }
-}
-
+function getTasksFromLocal() {
+let getTask = localStorage.getItem('tasks')
+document.querySelector('.textarea').innerHTML = getTask; 
+};
+getTasksFromLocal();
 
 // document.body.addEventListener('click', textArea);
 
