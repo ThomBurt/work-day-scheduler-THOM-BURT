@@ -45,16 +45,58 @@ setInterval(checkTime(), (1000 * 60) * 5);
 
 
 // Local storage
-   var tasks = document.querySelector('.textarea');
-// var tasks = $(".textarea");
+ var tasks = document.querySelector('.textarea');
+//var tasks = $(".textarea");
 
-  $('#save-btn').click(function() {
+  $('#save-btn').click(function(setDailyTasks) {
 
     dailyTasks = tasks.value;
       
       localStorage.setItem("tasks", JSON.stringify(dailyTasks))
-      console.log(localStorage);
+      //console.log(localStorage);
   });
+
+
+function getTasks() {
+    var tasksFromLocal = JSON.parse(window.localStorage.getItem("tasksFromLocal")) || [];
+    tasksFromLocal.sort(function (a, b) {
+        return b.score - a.score;
+    });
+
+    for (var i = 0; i < tasksFromLocal.length; i++) {
+        let pText = document.createElement("P");
+        pText.innerHTML = tasksFromLocal[i]
+    }
+}
+
+
+// document.body.addEventListener('click', textArea);
+
+
+//   // EVENT DELEGATION!!! - THIS IS TARGETING TEXT AREA
+//   function textArea(e){
+//      if(e.target.classList.contains('textarea'))
+//       console.log('hello');
+
+//   };
+
+
+// document.body.addEventListener('click', saveButtonClick)
+
+// function saveButtonClick(e){
+//     if(e.target.classList.contains('saveBtn'))
+//     var tasks = $(".textarea");
+//     dailyTasks = tasks.value;
+//     localStorage.setItem("tasks", JSON.stringify(dailyTasks))
+//     console.log('button click')
+// }
+
+
+
+
+
+
+
 
 
 
