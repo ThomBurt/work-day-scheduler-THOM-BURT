@@ -48,6 +48,7 @@ setInterval(checkTime(), (1000 * 60) * 5);
  //var tasks = document.querySelector('.textarea');
 //var tasks = $(".textarea");
 
+
 $(".saveBtn").click(function () {
     let hour = $(this).parent().attr("id");
     let description = $(this).parent().children("textarea").val();
@@ -58,54 +59,17 @@ getTasksFromLocal();
 
 
 function getTasksFromLocal() {
-    let getTask = localStorage.getItem('tasks')
-    document.querySelector('.textarea').innerHTML = getTask; 
-    };
- 
+    //let getTask = localStorage.getItem('value');
+    // document.querySelector('.textarea').innerHTML = getTask; 
+    //$(this).parent().children("textarea").text.Content = getTask;
+$("#hour9 .textarea").val(localStorage.getItem("hour9"));
+$("#hour10 .textarea").val(localStorage.getItem("hour10"));
+$("#hour11 .textarea").val(localStorage.getItem("hour11"));
+$("#hour12 .textarea").val(localStorage.getItem("hour12"));
+$("#hour13 .textarea").val(localStorage.getItem("hour13"));
+$("#hour14 .textarea").val(localStorage.getItem("hour14"));
+$("#hour15 .textarea").val(localStorage.getItem("hour15"));
+$("#hour16 .textarea").val(localStorage.getItem("hour16"));
+$("#hour17 .textarea").val(localStorage.getItem("hour17"));
+};
 
-
-// document.body.addEventListener('click', textArea);
-
-
-//   // EVENT DELEGATION!!! - THIS IS TARGETING TEXT AREA
-//   function textArea(e){
-//      if(e.target.classList.contains('textarea'))
-//       console.log('hello');
-
-//   };
-
-
-// document.body.addEventListener('click', saveButtonClick)
-
-// function saveButtonClick(e){
-//     if(e.target.classList.contains('saveBtn'))
-//     var tasks = $(".textarea");
-//     dailyTasks = tasks.value;
-//     localStorage.setItem("tasks", JSON.stringify(dailyTasks))
-//     console.log('button click')
-// }
-
-
-
-
-
-// var localStorageSave = function() {
-//     var timeBlockElements = $(".textarea");
-
-//     //loop through taskarea classes
-//     for (var i = 0 ; i < timeBlockElements.length ; i++) {
-
-//         //Get element i's ID as a string
-//         var elementID = timeBlockElements[i].id;
-
-//         //get element by ID
-//         var manipID = document.getElementById(timeBlockElements[i].id)
-// }
-// };
-//   $('#save-btn').click(function() {
-
-//     dailyTasks = tasks.value;
-      
-//       localStorage.setItem("tasks", JSON.stringify(localStorageSave))
-//       console.log(localStorage);
-//   });
