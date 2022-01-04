@@ -45,22 +45,24 @@ setInterval(checkTime(), (1000 * 60) * 5);
 
 
 // Local storage
- var tasks = document.querySelector('.textarea');
+ //var tasks = document.querySelector('.textarea');
 //var tasks = $(".textarea");
 
-  $('#save-btn').click(function(setDailyTasks) {
-
-    dailyTasks = tasks.value;
-      
-      localStorage.setItem("tasks", JSON.stringify(dailyTasks))
-      //console.log(localStorage);
+$(".saveBtn").click(function () {
+    let hour = $(this).parent().attr("id");
+    let description = $(this).parent().children("textarea").val();
+    localStorage.setItem(hour, description);
+    //console.log(localStorage);
   });
+getTasksFromLocal();
+
 
 function getTasksFromLocal() {
-let getTask = localStorage.getItem('tasks')
-document.querySelector('.textarea').innerHTML = getTask; 
-};
-getTasksFromLocal();
+    let getTask = localStorage.getItem('tasks')
+    document.querySelector('.textarea').innerHTML = getTask; 
+    };
+ 
+
 
 // document.body.addEventListener('click', textArea);
 
@@ -84,24 +86,6 @@ getTasksFromLocal();
 // }
 
 
-
-
-
-
-
-
-
-
-// //Grabbing task IDs for time slots
-// var tasks9AM = document.getElementById("09");
-// var tasks10AM = document.getElementById("10");
-// var tasks11AM = document.getElementById("11");
-// var tasks12PM = document.getElementById("12");
-// var tasks1PM = document.getElementById("13");
-// var tasks2PM = document.getElementById("14");
-// var tasks3PM = document.getElementById("15");
-// var tasks4PM = document.getElementById("16");
-// var tasks5PM = document.getElementById("17");
 
 
 
